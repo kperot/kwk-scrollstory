@@ -1,22 +1,19 @@
-# KWK Scrollytelling template
-
-This template is a starting point / example of how to create a scrollytelling piece using Svelte and Highcharts! 
-
-## Demo
-See a live demo of the page [here](https://jasminesamra.github.io/kwk-scrollytelling-template/)!
-
-## Recommended IDE Setup
-
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
-
-## How to clone the repo
-On this repo's homepage in GitHub, click the `Use this template` button. Select the option to create a new repository. This will create a new repo under your GitHub account.
-
-Navigate to your new copy of this template in your GitHub profile. 
-
-Clone your new repo locally and `cd` into it. 
-
-Run `npm install` and then `npm run dev` to spin up the project locally. Then, start making changes! You can use this repo as a starting point for your own final project or simply as an example. 
-
 ## Credit
+
 Repo created using vite (`npm create vite@6`)
+
+Code Framework originated from the KWK Scrollytelling template
+
+Copilot AI was used for CSS and Javascript debugging; used to help me understand how Intersection Observer API and props work by examples and asking questions.
+
+## Data Sources
+
+Percent Poverty by Household and Degree Attainment Data provided by Black Wealth Data Center https://blackwealthdata.org/
+
+Atlanta Educational Statistics and Strategies provided by "Two Atlantas 2023" https://edequityatl.org/ and "Changing the Odds 2024" https://www.aecf.org/resources/changing-the-odds-2024
+
+All images were sourced from Adobe Stock: https://stock.adobe.com/
+
+Tutorials and resources utlized: https://svelte.dev/ and https://www.w3schools.com/css/default.asp 
+
+Charts sourced from Charts.js: https://www.chartjs.org/

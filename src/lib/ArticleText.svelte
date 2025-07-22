@@ -1,5 +1,6 @@
 <script>
     let { children } = $props();
+
 </script>
 
 <div class="article-text">

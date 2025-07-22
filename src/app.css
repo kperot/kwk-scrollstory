@@ -2,10 +2,26 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 18px;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Barrel - classic yellow */
+  --pencil-yellow: #f4c542;
+
+  /* Graphite tip */
+  --pencil-graphite: #4a4a4a;
+
+  /* Eraser - pinkish red */
+  --pencil-eraser: #e87d7d;
+
+  /* Shiny metal */
+  --pencil-metal: #d1d1d1;
+
+  /* Wood grain near tip */
+  --pencil-wood: #c8a678;
+
 }

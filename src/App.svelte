@@ -1,24 +1,58 @@
 <script>
-  import LeftAlignedExample from "./sections/LeftAlignedExample.svelte";
-  import RightAlignedExample from "./sections/RightAlignedExample.svelte";
-  import ImageExample from "./sections/ImageExample.svelte";
   import TitleSection from "./sections/TitleSection.svelte";
-  import InteresectionObserverBasicExample from "./sections/InteresectionObserverBasicExample.svelte";
-  import IntersectionObserverAlertExample from "./sections/IntersectionObserverAlertExample.svelte";
-  import DisappearingDuckExample from "./sections/DisappearingDuckExample.svelte";
-  import IntersectionObserverSectionCard from "./sections/IntersectionObserverSectionCard.svelte";
-  import IntersectionObserverListExample from "./sections/IntersectionObserverListExample.svelte";
+  import IntroScene from "./sections/IntroScene.svelte";
+  import PerPovertySection from "./sections/PerPovertySection.svelte";
+  import Transition from "./sections/Transition.svelte";
+  import LiteracySection from "./sections/DegreeAttainSection.svelte";
+  import FinishLineScene from "./sections/FinishLineScene.svelte";
+  import { tick } from 'svelte';
+
+  let showLiteracy = false;
+  let showFinishLine = false;
+
+  // called when arrow/button clicked
+  async function handleToLiteracy() {
+    showLiteracy = true;
+    await tick(); // Wait for Literacy section to be added to DOM
+    document.getElementById('literacyCard')?.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function handleIntersection(entry) {
+    if (entry.isIntersecting) {
+      showFinishLine = true;
+    }
+  }
+
+  function observe(node) {
+    const observer = new IntersectionObserver(([entry]) => {
+      handleIntersection(entry);
+    }, { threshold: 0.6 });
+
+    observer.observe(node);
+    return {
+      destroy() {
+        observer.disconnect();
+      }
+    };
+  }
 </script>
 
-<main>
+<main style="overflow-anchor: none;">
   <TitleSection />
-  <RightAlignedExample />
-  <LeftAlignedExample />
-  <ImageExample />
+  <IntroScene />
+  <PerPovertySection />
+  <Transition onNext={handleToLiteracy} />
 
-  <IntersectionObserverSectionCard />
-  <InteresectionObserverBasicExample />
-  <IntersectionObserverAlertExample />
-  <DisappearingDuckExample />
-  <IntersectionObserverListExample />
+  {#if showLiteracy}
+    <section id="literacyCard">
+      <LiteracySection />
+      <!-- Place observer inside this section -->
+      <div use:observe style="height: 1px;"></div>
+    </section>
+  {/if}
+
+  {#if showFinishLine}
+    <FinishLineScene id="finishLineCard" />
+  {/if}
 </main>
+

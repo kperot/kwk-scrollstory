@@ -1,9 +1,9 @@
 {
-  "name": "kwk-scrollytelling-template",
-  "private": true,
+  "name": "kwk-scrollstory",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://jasminesamra.github.io/kwk-scrollytelling-template",
+  "homepage": "https://kperot.github.io/kwk-scrollstory",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -12,9 +12,14 @@
   },
   "devDependencies": {
     "@highcharts/svelte": "^1.1.1",
-    "@sveltejs/vite-plugin-svelte": "^5.0.3",
+    "@sveltejs/vite-plugin-svelte": "^5.1.1",
+    "chart.js": "^4.5.0",
     "gh-pages": "^6.3.0",
     "svelte": "^5.28.1",
     "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "highcharts": "^12.3.0",
+    "svelte-intersection-observer": "^1.0.0"
   }
 }
